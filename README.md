@@ -9,7 +9,7 @@ The main motivation behind this project is to create a map editor which supports
 
 
 #####Download
-Latest prototype build: [03 July 2015](http://mobiusreactor.com/aw-map/downloads/2015-07-03.zip)
+Latest prototype build: [13 July 2015](http://mobiusreactor.com/aw-map/downloads/2015-07-13.zip)
 
 
 #####Build Instructions
