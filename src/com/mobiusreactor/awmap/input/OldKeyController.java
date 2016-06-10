@@ -1,3 +1,4 @@
+package com.mobiusreactor.awmap.input;
 /*
 package com.input;
 

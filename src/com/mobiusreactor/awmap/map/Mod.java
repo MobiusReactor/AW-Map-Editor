@@ -1,4 +1,4 @@
-package com.map;
+package com.mobiusreactor.awmap.map;
 
 import java.awt.Image;
 import java.io.BufferedReader;

@@ -1,11 +1,11 @@
-package com.input;
+package com.mobiusreactor.awmap.input;
 
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
 import javax.swing.InputMap;
 import javax.swing.KeyStroke;
-import com.ui.Editor;
+import com.mobiusreactor.awmap.ui.Editor;
 
 public class KeyController extends MapController {
 	private InputMap im;

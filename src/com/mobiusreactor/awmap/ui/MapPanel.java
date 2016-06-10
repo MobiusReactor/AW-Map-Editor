@@ -1,4 +1,4 @@
-package com.ui;
+package com.mobiusreactor.awmap.ui;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
@@ -6,15 +6,13 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JPanel;
-import com.input.KeyController;
-import com.input.MapController;
-import com.input.MouseController;
-import com.map.Location;
-import com.map.Map;
-import com.map.Mod;
-import com.map.ModHandler;
-import com.map.Terrain;
-import com.map.Tile;
+import com.mobiusreactor.awmap.input.KeyController;
+import com.mobiusreactor.awmap.input.MapController;
+import com.mobiusreactor.awmap.input.MouseController;
+import com.mobiusreactor.awmap.map.Location;
+import com.mobiusreactor.awmap.map.Map;
+import com.mobiusreactor.awmap.map.Terrain;
+import com.mobiusreactor.awmap.map.Tile;
 
 public class MapPanel extends JPanel {
 	private Map map;

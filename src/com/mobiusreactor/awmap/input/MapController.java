@@ -1,13 +1,13 @@
-package com.input;
+package com.mobiusreactor.awmap.input;
 
 import javax.swing.undo.CompoundEdit;
-import com.map.Location;
-import com.map.Map;
-import com.map.Terrain;
-import com.map.Tile;
-import com.map.Unit;
-import com.ui.Editor;
-import com.undo.TileEdit;
+import com.mobiusreactor.awmap.map.Location;
+import com.mobiusreactor.awmap.map.Map;
+import com.mobiusreactor.awmap.map.Terrain;
+import com.mobiusreactor.awmap.map.Tile;
+import com.mobiusreactor.awmap.map.Unit;
+import com.mobiusreactor.awmap.ui.Editor;
+import com.mobiusreactor.awmap.undo.TileEdit;
 
 public class MapController {
 	protected static Location c = new Location();

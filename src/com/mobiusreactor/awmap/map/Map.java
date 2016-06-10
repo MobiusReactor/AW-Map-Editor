@@ -1,10 +1,10 @@
-package com.map;
+package com.mobiusreactor.awmap.map;
 
 import javax.swing.JOptionPane;
 import javax.swing.undo.AbstractUndoableEdit;
 import javax.swing.undo.UndoManager;
-import com.ui.Editor;
-import com.undo.ResizeEdit;
+import com.mobiusreactor.awmap.ui.Editor;
+import com.mobiusreactor.awmap.undo.ResizeEdit;
 
 public class Map {
 	private Tile[][] tile;

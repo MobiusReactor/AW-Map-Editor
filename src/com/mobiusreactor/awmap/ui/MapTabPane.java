@@ -1,4 +1,4 @@
-package com.ui;
+package com.mobiusreactor.awmap.ui;
 
 import javax.swing.JTabbedPane;
 

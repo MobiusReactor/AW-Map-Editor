@@ -1,8 +1,7 @@
-package com.ui;
+package com.mobiusreactor.awmap.ui;
 
 import javax.swing.SwingUtilities;
-import com.map.Mod;
-import com.map.ModHandler;
+import com.mobiusreactor.awmap.map.ModHandler;
 
 public class Main {
 

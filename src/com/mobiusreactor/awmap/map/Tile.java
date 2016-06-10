@@ -1,4 +1,4 @@
-package com.map;
+package com.mobiusreactor.awmap.map;
 
 public class Tile {
 	private Terrain t;

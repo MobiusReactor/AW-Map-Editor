@@ -1,6 +1,6 @@
-package com.map;
+package com.mobiusreactor.awmap.map;
 
-import com.ui.Editor;
+import com.mobiusreactor.awmap.ui.Editor;
 
 public class Location {
 	public int x;

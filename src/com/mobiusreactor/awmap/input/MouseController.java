@@ -1,11 +1,11 @@
-package com.input;
+package com.mobiusreactor.awmap.input;
 
 import java.awt.event.MouseEvent;
 import javax.swing.SwingUtilities;
 import javax.swing.event.MouseInputListener;
-import com.map.Location;
-import com.map.Mod;
-import com.ui.Editor;
+import com.mobiusreactor.awmap.map.Location;
+import com.mobiusreactor.awmap.map.Mod;
+import com.mobiusreactor.awmap.ui.Editor;
 
 public class MouseController extends MapController implements MouseInputListener {
 	@Override

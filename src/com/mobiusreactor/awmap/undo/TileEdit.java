@@ -1,9 +1,9 @@
-package com.undo;
+package com.mobiusreactor.awmap.undo;
 
 import javax.swing.undo.AbstractUndoableEdit;
-import com.map.Map;
-import com.map.Tile;
-import com.ui.Editor;
+import com.mobiusreactor.awmap.map.Map;
+import com.mobiusreactor.awmap.map.Tile;
+import com.mobiusreactor.awmap.ui.Editor;
 
 public class TileEdit extends AbstractUndoableEdit {
 	private Map m;

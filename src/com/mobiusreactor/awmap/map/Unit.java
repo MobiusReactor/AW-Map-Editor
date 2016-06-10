@@ -1,4 +1,4 @@
-package com.map;
+package com.mobiusreactor.awmap.map;
 
 public class Unit {
 	private String id;

@@ -1,4 +1,4 @@
-package com.map;
+package com.mobiusreactor.awmap.map;
 
 import java.io.File;
 import java.io.FilenameFilter;

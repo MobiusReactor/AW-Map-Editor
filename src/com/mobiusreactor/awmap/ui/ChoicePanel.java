@@ -1,4 +1,4 @@
-package com.ui;
+package com.mobiusreactor.awmap.ui;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -6,8 +6,7 @@ import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
-import com.input.MapController;
-import com.map.Mod;
+import com.mobiusreactor.awmap.input.MapController;
 
 public class ChoicePanel extends JPanel implements MouseListener {
 	public ChoicePanel() {

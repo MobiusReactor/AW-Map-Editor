@@ -1,4 +1,4 @@
-package com.ui;
+package com.mobiusreactor.awmap.ui;
 
 import java.util.ArrayList;
 import javax.swing.JFrame;
@@ -9,9 +9,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
-import com.map.Location;
-import com.map.Map;
-import com.map.Mod;
+import com.mobiusreactor.awmap.map.Location;
+import com.mobiusreactor.awmap.map.Map;
 
 public class Editor extends JFrame {
 	private static JTabbedPane mapTab;
