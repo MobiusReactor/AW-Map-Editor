@@ -21,10 +21,6 @@ public class Location {
 		}
 	}
 
-	public void setLocation(Location l) {
-		setLocation(l.x, l.y);
-	}
-
 	public void translate(int dx, int dy) {
 		setLocation(x + dx, y + dy);
 	}

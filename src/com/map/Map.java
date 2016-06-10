@@ -9,6 +9,8 @@ import com.undo.ResizeEdit;
 public class Map {
 	private Tile[][] tile;
 
+	private Mod mod;
+
 	private int width;
 	private int height;
 
@@ -18,16 +20,21 @@ public class Map {
 	private UndoManager undoHandler = new UndoManager();
 
 	/**
-	 * Initialises the map, setting the width and height to the appropriate values,
-	 * and setting up the tiles with the default terrain.
+	 * Initialises the map, setting the width and height to the appropriate values, and setting up the tiles with the
+	 * default terrain.
 	 * 
-	 * @param width The width of the map
-	 * @param height The height of the map
-	 * @param panel The panel which displays this map
+	 * @param width
+	 *            The width of the map
+	 * @param height
+	 *            The height of the map
+	 * @param panel
+	 *            The panel which displays this map
 	 */
 	public Map(int width, int height) {
 		this.width = width;
 		this.height = height;
+
+		mod = ModHandler.getMod();
 
 		tile = new Tile[width][height];
 
@@ -41,8 +48,10 @@ public class Map {
 	/**
 	 * Checks if a given x and y are within the map's bounds.
 	 * 
-	 * @param x The x co-ordinate to test
-	 * @param y The y co-ordinate to test
+	 * @param x
+	 *            The x co-ordinate to test
+	 * @param y
+	 *            The y co-ordinate to test
 	 * @return True if the specified tile is within the map's bounds
 	 */
 	public boolean onMap(int x, int y) {
@@ -67,11 +76,17 @@ public class Map {
 		return height;
 	}
 
+	public Mod getMod(){
+		return mod;
+	}
+
 	/**
 	 * Gets a map Tile based on its X and Y co-ordinates
 	 * 
-	 * @param x The X co-ordinate of the tile to get
-	 * @param y The Y co-ordinate of the tile to get
+	 * @param x
+	 *            The X co-ordinate of the tile to get
+	 * @param y
+	 *            The Y co-ordinate of the tile to get
 	 * @return The tile requested
 	 */
 	public Tile getTile(int x, int y) {
@@ -98,8 +113,10 @@ public class Map {
 	/**
 	 * Resizes the map
 	 * 
-	 * @param newWidth The new width for the map
-	 * @param newHeight The new height for the map
+	 * @param newWidth
+	 *            The new width for the map
+	 * @param newHeight
+	 *            The new height for the map
 	 */
 	public void resize(int newWidth, int newHeight) {
 		ResizeEdit re = new ResizeEdit(newWidth, newHeight);
@@ -124,7 +141,7 @@ public class Map {
 	/**
 	 * Prompts user for new map name
 	 * 
-	 * Will be replaced by settings screen with 
+	 * Will be replaced by settings screen with
 	 */
 	public void rename() {
 		String newName = JOptionPane.showInputDialog("Enter map name");
@@ -138,7 +155,8 @@ public class Map {
 	/**
 	 * Adds the specified edit to the undo handler
 	 * 
-	 * @param e The edit to add
+	 * @param e
+	 *            The edit to add
 	 */
 	public void addEdit(AbstractUndoableEdit e) {
 		undoHandler.addEdit(e);

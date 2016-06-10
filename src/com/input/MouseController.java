@@ -5,6 +5,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.MouseInputListener;
 import com.map.Location;
 import com.map.Mod;
+import com.ui.Editor;
 
 public class MouseController extends MapController implements MouseInputListener {
 	@Override
@@ -14,7 +15,7 @@ public class MouseController extends MapController implements MouseInputListener
 	@Override
 	public void mousePressed(MouseEvent e) {
 		if (e.getButton() == MouseEvent.BUTTON1) {
-			s.setLocation(c);
+			s = c.clone();
 
 			pressButton();
 		}
@@ -50,7 +51,7 @@ public class MouseController extends MapController implements MouseInputListener
 
 	private void doMoveCursor(MouseEvent e) {
 		Location old = c.clone();
-		c.setLocation(e.getX() / Mod.getTileSize(), e.getY() / Mod.getTileSize());
+		c.setLocation(e.getX() / Editor.getMap().getMod().getTileSize(), e.getY() / Editor.getMap().getMod().getTileSize());
 
 		if (!c.equals(old)) {
 			moveCursor(SwingUtilities.isLeftMouseButton(e));

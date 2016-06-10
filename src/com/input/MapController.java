@@ -14,10 +14,10 @@ public class MapController {
 	protected static Location s = new Location();
 
 	private CompoundEdit multiEdit = new CompoundEdit();
-	
+
 	private static Terrain selectedTerr = new Terrain(0);
 	private static Unit selectedUnit;
-	
+
 
 	protected void moveCursor(boolean buttonDown) {
 		if (buttonDown) {
@@ -36,7 +36,7 @@ public class MapController {
 		}
 
 		Tile old = m.getTile(c.x, c.y);
-		
+
 		TileEdit edit = new TileEdit(old, new Tile(selectedTerr, old.getUnit()), c.x, c.y);
 		multiEdit.addEdit(edit);
 
@@ -51,8 +51,8 @@ public class MapController {
 	public static Location getCursor() {
 		return c;
 	}
-	
-	public static void setSelected(int id){
-		selectedTerr= new Terrain(id);
+
+	public static void setSelected(int id) {
+		selectedTerr = new Terrain(id);
 	}
 }

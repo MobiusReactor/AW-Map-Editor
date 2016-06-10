@@ -23,12 +23,12 @@ public class ChoicePanel extends JPanel implements MouseListener {
 		super.paintComponent(g);
 		g.setColor(Color.RED);
 
-		int ts = Mod.getTileSize();
+		int ts = Editor.getMap().getMod().getTileSize();
 
 		int col = 0;
 		int row = 0;
 
-		for (Image i : Mod.getTerrImageArray()) {
+		for (Image i : Editor.getMap().getMod().getTerrImageArray()) {
 			int j = col * (ts + 12) + 12;
 
 			if (col == 6) {
@@ -47,7 +47,7 @@ public class ChoicePanel extends JPanel implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		int ts = Mod.getTileSize();
+		int ts = Editor.getMap().getMod().getTileSize();
 
 		int col = -1;
 		int row = -1;

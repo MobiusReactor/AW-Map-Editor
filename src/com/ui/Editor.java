@@ -30,19 +30,19 @@ public class Editor extends JFrame {
 		mapTab = new MapTabPane();
 		add(mapTab);
 
+		addMap("Untitled", 30, 20);
+
 		coordLbl = new JLabel("", SwingConstants.RIGHT);
 		coordLbl.setBounds(745, 520, 70, 20);
 		add(coordLbl);
-
+		
 		choiceTab = new JTabbedPane();
 		choiceTab.setFocusable(false);
-		choiceTab.setBounds(560, 5, Mod.getTileSize() * 6 + 89, 480);
+		choiceTab.setBounds(560, 5, getMap().getMod().getTileSize() * 6 + 89, 480);
 		choiceTab.addTab("Terrain", new ChoicePanel());
 		choiceTab.addTab("Units", new JPanel());
 		choiceTab.addTab("Props", new JPanel());
 		add(choiceTab);
-
-		addMap("Untitled", 30, 20);
 	}
 
 	/**

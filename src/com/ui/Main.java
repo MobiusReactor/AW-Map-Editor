@@ -2,6 +2,7 @@ package com.ui;
 
 import javax.swing.SwingUtilities;
 import com.map.Mod;
+import com.map.ModHandler;
 
 public class Main {
 
@@ -9,7 +10,7 @@ public class Main {
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
-				Mod.init();
+				ModHandler.loadMods();
 				new Editor();
 			}
 		});

@@ -1,39 +1,72 @@
 package com.map;
 
 import java.awt.Image;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.ImageIcon;
 
 public class Mod {
-	private static int tileSize = 16;
-	private static String[] terrName = { "PLIN", "SEAS", "MNTN" };
-	private static Image[] terrImg;
+	private int tileSize;
+	private String[] tilesets;
+
+	private String[] terrName;
+	private Image[] terrImg;
 
 	// private static Map<String, Image> terrImg = new HashMap<>();
 
-	public static void init() {
-		terrImg = new Image[10];
-		terrImg[0] = new ImageIcon("img/CWT_PLIN.png").getImage();
-		terrImg[1] = new ImageIcon("img/CWT_SEAS(S)$SSSSSSSS.png").getImage();
-		terrImg[2] = new ImageIcon("img/CWT_MNTN.png").getImage();
-		terrImg[3] = new ImageIcon("img/CWT_PLIN.png").getImage();
-		terrImg[4] = new ImageIcon("img/CWT_PLIN.png").getImage();
-		terrImg[5] = new ImageIcon("img/CWT_PLIN.png").getImage();
-		terrImg[6] = new ImageIcon("img/CWT_PLIN.png").getImage();
-		terrImg[7] = new ImageIcon("img/CWT_PLIN.png").getImage();
-		terrImg[8] = new ImageIcon("img/CWT_PLIN.png").getImage();
-		terrImg[9] = new ImageIcon("img/CWT_PLIN.png").getImage();
-		
+	/**
+	 * Load a mod's data from the specified info file. Currently uses a plaintext file, will probably be replaced with
+	 * JSON in the future.
+	 * 
+	 * @param path
+	 *            Path to the mod info file
+	 */
+	public Mod(String path) {
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(new File(path)));
+
+			tileSize = Integer.parseInt(br.readLine());
+
+			tilesets = br.readLine().split("\\s+");
+
+			System.out.println("tile size: " + tileSize + "x" + tileSize);
+			System.out.print("tilesets: " + tilesets.length + " ");
+
+			for (String s : tilesets) {
+				System.out.print("<" + s + ">  ");
+			}
+
+			System.out.println();
+
+
+			int numTerr = Integer.parseInt(br.readLine());
+
+			terrName = new String[numTerr];
+			terrImg = new Image[numTerr];
+
+			for (int i = 0; i < numTerr; i++) {
+				String[] s = br.readLine().split("\\s+");
+				terrImg[i] = new ImageIcon("mod/data/AW1/" + tilesets[0] + "/" + s[0]).getImage();
+				terrName[i] = s[1];
+			}
+
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public static Image getImage(int id) {
+	public Image getImage(int id) {
 		return terrImg[id];
 	}
-	
-	public static Image[] getTerrImageArray(){
+
+	public Image[] getTerrImageArray() {
 		return terrImg;
 	}
 
-	public static int getTileSize() {
+	public int getTileSize() {
 		return tileSize;
 	}
 }

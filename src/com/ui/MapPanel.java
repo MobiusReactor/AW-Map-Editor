@@ -12,6 +12,7 @@ import com.input.MouseController;
 import com.map.Location;
 import com.map.Map;
 import com.map.Mod;
+import com.map.ModHandler;
 import com.map.Terrain;
 import com.map.Tile;
 
@@ -21,10 +22,10 @@ public class MapPanel extends JPanel {
 
 	public MapPanel(int w, int h) {
 		super();
-		setPreferredSize(new Dimension(w * Mod.getTileSize(), h * Mod.getTileSize()));
+		map = new Map(w, h);
+		setPreferredSize(new Dimension(w * map.getMod().getTileSize(), h * map.getMod().getTileSize()));
 		initInputHandler();
 		setFocusable(true);
-		map = new Map(w, h);
 	}
 
 	private void initInputHandler() {
@@ -46,7 +47,7 @@ public class MapPanel extends JPanel {
 
 		Graphics2D g2d = (Graphics2D) g;
 
-		int tileSize = Mod.getTileSize();
+		int tileSize = map.getMod().getTileSize();
 
 		for (int x = 0; x < map.getWidth(); x++) {
 			for (int y = 0; y < map.getHeight(); y++) {
@@ -75,10 +76,10 @@ public class MapPanel extends JPanel {
 	}
 
 	private void drawTerr(Graphics2D g2d, Terrain t, int x, int y, int tileSize) {
-		g2d.drawImage(Mod.getImage(t.getID()), x * tileSize, (y - 1) * tileSize, (x + 1) * tileSize, (y + 1) * tileSize, 0, 0, tileSize, tileSize * 2, this);
+		g2d.drawImage(map.getMod().getImage(t.getID()), x * tileSize, (y - 1) * tileSize, (x + 1) * tileSize, (y + 1) * tileSize, 0, 0, tileSize, tileSize * 2, this);
 	}
 
 	public Dimension getPreferredSize() {
-		return new Dimension(map.getWidth() * Mod.getTileSize(), map.getHeight() * Mod.getTileSize());
+		return new Dimension(map.getWidth() * map.getMod().getTileSize(), map.getHeight() * map.getMod().getTileSize());
 	}
 }
