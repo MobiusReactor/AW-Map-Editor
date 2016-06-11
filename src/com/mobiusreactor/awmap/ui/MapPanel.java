@@ -11,6 +11,7 @@ import com.mobiusreactor.awmap.input.MapController;
 import com.mobiusreactor.awmap.input.MouseController;
 import com.mobiusreactor.awmap.map.Location;
 import com.mobiusreactor.awmap.map.Map;
+import com.mobiusreactor.awmap.map.Property;
 import com.mobiusreactor.awmap.map.Terrain;
 import com.mobiusreactor.awmap.map.Tile;
 
@@ -50,7 +51,15 @@ public class MapPanel extends JPanel {
 		for (int x = 0; x < map.getWidth(); x++) {
 			for (int y = 0; y < map.getHeight(); y++) {
 				Tile t = map.getTile(x, y);
-				drawTerr(g2d, t.getTerr(), x, y, tileSize);
+
+				if (t.getTerr() instanceof Property) {
+					Property p = (Property) t.getTerr();
+
+					drawTerr(g2d, t.getTerr(), x, y, p.getOwner(), tileSize);
+
+				} else {
+					drawTerr(g2d, t.getTerr(), x, y, tileSize);
+				}
 			}
 		}
 
@@ -71,6 +80,10 @@ public class MapPanel extends JPanel {
 		Location c = MapController.getCursor();
 		g2d.setColor(Color.RED);
 		g2d.drawRect(c.x * tileSize, c.y * tileSize, tileSize, tileSize);
+	}
+
+	private void drawTerr(Graphics2D g2d, Terrain t, int x, int y, int var, int tileSize) {
+		g2d.drawImage(map.getMod().getImage(t.getID()), x * tileSize, (y - 1) * tileSize, (x + 1) * tileSize, (y + 1) * tileSize, var * tileSize, 0, (var + 1) * tileSize, tileSize * 2, this);
 	}
 
 	private void drawTerr(Graphics2D g2d, Terrain t, int x, int y, int tileSize) {

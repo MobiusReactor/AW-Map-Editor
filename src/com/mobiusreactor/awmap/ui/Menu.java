@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import com.mobiusreactor.awmap.io.Load;
 
 public class Menu extends JMenuBar {
 	public Menu() {
@@ -16,15 +17,18 @@ public class Menu extends JMenuBar {
 
 	private class FileMenu extends JMenu implements ActionListener {
 		JMenuItem newMap = new JMenuItem("New");
+		JMenuItem load = new JMenuItem("Load");
 		JMenuItem exit = new JMenuItem("Exit");
 
 		public FileMenu() {
 			super("File");
 
 			newMap.addActionListener(this);
+			load.addActionListener(this);
 			exit.addActionListener(this);
 
 			add(newMap);
+			add(load);
 			add(exit);
 		}
 
@@ -32,6 +36,9 @@ public class Menu extends JMenuBar {
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource().equals(newMap)) {
 				Editor.addMap("Untitled", 30, 20);
+			
+			}else if (e.getSource().equals(load)){
+				Load.loadMap();
 
 			} else if (e.getSource().equals(exit)) {
 				System.exit(0);

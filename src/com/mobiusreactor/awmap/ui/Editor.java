@@ -34,7 +34,7 @@ public class Editor extends JFrame {
 		coordLbl = new JLabel("", SwingConstants.RIGHT);
 		coordLbl.setBounds(745, 520, 70, 20);
 		add(coordLbl);
-		
+
 		choiceTab = new JTabbedPane();
 		choiceTab.setFocusable(false);
 		choiceTab.setBounds(560, 5, getMap().getMod().getTileSize() * 6 + 89, 480);
@@ -47,9 +47,12 @@ public class Editor extends JFrame {
 	/**
 	 * Adds a new tab to the JTabbedPane, with the settings specified in the parameters
 	 * 
-	 * @param name The name of the map
-	 * @param width The width of the map
-	 * @param height The height of the map
+	 * @param name
+	 *            The name of the map
+	 * @param width
+	 *            The width of the map
+	 * @param height
+	 *            The height of the map
 	 */
 	public static void addMap(String name, int width, int height) {
 		// Removes key bindings for scroll panel, so keyboard controls work properly
@@ -69,7 +72,8 @@ public class Editor extends JFrame {
 	/**
 	 * Sets the co-ordinates label to display the specified location
 	 * 
-	 * @param l The location to set the co-ordinates to
+	 * @param l
+	 *            The location to set the co-ordinates to
 	 */
 	public static void setCoordLabel(Location l) {
 		coordLbl.setText("X: " + l.x + ",  Y: " + l.y);
@@ -96,7 +100,8 @@ public class Editor extends JFrame {
 	/**
 	 * Updates the map tab name with the name specified
 	 * 
-	 * @param name The map's name
+	 * @param name
+	 *            The map's name
 	 */
 	public static void setMapName(String name) {
 		mapTab.setTitleAt(mapTab.getSelectedIndex(), name);

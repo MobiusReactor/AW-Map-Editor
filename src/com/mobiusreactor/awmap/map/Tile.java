@@ -13,9 +13,9 @@ public class Tile {
 		this.u = u;
 	}
 
-	public Tile(int terrID) {
-		t = new Terrain(terrID);
-	}
+//	public Tile(int terrID) {
+//		t = new Terrain(terrID);
+//	}
 
 	public Terrain getTerr() {
 		return t;
@@ -27,7 +27,7 @@ public class Tile {
 
 	@Override
 	public Tile clone() {
-		return new Tile(t.getID());
+		return new Tile(t, u);
 	}
 
 	@Override
