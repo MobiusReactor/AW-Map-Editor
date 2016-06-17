@@ -79,9 +79,6 @@ public class Mod {
 
 							terrain.add(new TerrainModInfo(id, gfx, name, tilesets));
 							r.endObject();
-
-
-//							tilesets.add(r.nextString());
 						}
 						r.endArray();
 						break;
@@ -92,86 +89,12 @@ public class Mod {
 			}
 
 			r.close();
-
-//			BufferedReader br = new BufferedReader(new FileReader(new File(path)));
-//
-//			tilesize = Integer.parseInt(br.readLine());
-//
-//			tilesets = br.readLine().split("\\s+");
-//
-//			System.out.println("tile size: " + tilesize + "x" + tilesize);
-//			System.out.print("tilesets: " + tilesets.length + " ");
-//
-//			for (String s : tilesets) {
-//				System.out.print("<" + s + ">  ");
-//			}
-//
-//			System.out.println();
-//
-//
-//			int numTerr = Integer.parseInt(br.readLine());
-//
-////			terrName = new String[numTerr];
-////			terrImg = new Image[numTerr];
-//
-//			for (int i = 0; i < numTerr; i++) {
-//				String[] s = br.readLine().split("\\s+");
-////				terrImg[i] = new ImageIcon("mod/data/AW1/" + tilesets[0] + "/" + s[0]).getImage();
-////				terrName[i] = s[1];
-//			}
-//
-//			br.close();
 		} catch (
 
 		IOException e) {
 			e.printStackTrace();
 		}
 	}
-
-
-	/*
-	/**
-	 * Load a mod's data from the specified info file. Currently uses a plaintext file, will probably be replaced with
-	 * JSON in the future.
-	 * 
-	 * @param path
-	 *            Path to the mod info file
-	 *
-	@Deprecated
-	public Mod(String path, boolean txt) {
-		try {
-			BufferedReader br = new BufferedReader(new FileReader(new File(path)));
-	
-			tileSize = Integer.parseInt(br.readLine());
-	
-			tilesets = br.readLine().split("\\s+");
-	
-			System.out.println("tile size: " + tileSize + "x" + tileSize);
-			System.out.print("tilesets: " + tilesets.length + " ");
-	
-			for (String s : tilesets) {
-				System.out.print("<" + s + ">  ");
-			}
-	
-			System.out.println();
-	
-	
-			int numTerr = Integer.parseInt(br.readLine());
-	
-			terrName = new String[numTerr];
-			terrImg = new Image[numTerr];
-	
-			for (int i = 0; i < numTerr; i++) {
-				String[] s = br.readLine().split("\\s+");
-				terrImg[i] = new ImageIcon("mod/data/AW1/" + tilesets[0] + "/" + s[0]).getImage();
-				terrName[i] = s[1];
-			}
-	
-			br.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}*/
 
 	public Image getImage(int id, int tileset) {
 		return terrain.get(id).getGfx(tileset);
