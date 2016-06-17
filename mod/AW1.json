@@ -1,0 +1,66 @@
+{
+    "name": "AW1",
+    "tilesize": 16,
+    "tilesets": [
+        "CLEAR",
+        "SNOW"
+    ],
+    "terrain": [
+        {
+            "id": "PLIN",
+            "gfx": "PLIN.gif"
+        },
+        {
+            "id": "FRST",
+            "gfx": "FRST.gif"
+        },
+        {
+            "id": "MNTN",
+            "gfx": "MNTN.gif"
+        },
+        {
+            "id": "RIVR",
+            "gfx": "RIVR.gif"
+        },
+        {
+            "id": "ROAD",
+            "gfx": "ROAD.gif"
+        },
+        {
+            "id": "BRDG",
+            "gfx": "BRDG.gif"
+        },
+        {
+            "id": "SEAS",
+            "gfx": "SEAS.gif"
+        },
+        {
+            "id": "REEF",
+            "gfx": "REEF.gif"
+        },
+        {
+            "id": "SHOA",
+            "gfx": "SHOA.gif"
+        },
+        {
+            "id": "HQTR",
+            "gfx": "HQTR.gif"
+        },
+        {
+            "id": "CITY",
+            "gfx": "CITY.gif"
+        },
+        {
+            "id": "BASE",
+            "gfx": "BASE.gif"
+        },
+        {
+            "id": "APRT",
+            "gfx": "APRT.gif"
+        },
+        {
+            "id": "PORT",
+            "gfx": "PORT.gif"
+        }
+    ]
+}

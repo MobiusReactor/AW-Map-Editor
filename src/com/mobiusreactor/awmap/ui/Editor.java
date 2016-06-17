@@ -37,7 +37,7 @@ public class Editor extends JFrame {
 
 		choiceTab = new JTabbedPane();
 		choiceTab.setFocusable(false);
-		choiceTab.setBounds(560, 5, getMap().getMod().getTileSize() * 6 + 89, 480);
+		choiceTab.setBounds(560, 5, getMap().getMod().getTilesize() * 6 + 89, 480);
 		choiceTab.addTab("Terrain", new ChoicePanel());
 		choiceTab.addTab("Units", new JPanel());
 		choiceTab.addTab("Props", new JPanel());

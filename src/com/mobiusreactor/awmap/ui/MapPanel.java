@@ -22,7 +22,7 @@ public class MapPanel extends JPanel {
 	public MapPanel(int w, int h) {
 		super();
 		map = new Map(w, h);
-		setPreferredSize(new Dimension(w * map.getMod().getTileSize(), h * map.getMod().getTileSize()));
+		setPreferredSize(new Dimension(w * map.getMod().getTilesize(), h * map.getMod().getTilesize()));
 		initInputHandler();
 		setFocusable(true);
 	}
@@ -46,7 +46,7 @@ public class MapPanel extends JPanel {
 
 		Graphics2D g2d = (Graphics2D) g;
 
-		int tileSize = map.getMod().getTileSize();
+		int tileSize = map.getMod().getTilesize();
 
 		for (int x = 0; x < map.getWidth(); x++) {
 			for (int y = 0; y < map.getHeight(); y++) {
@@ -83,14 +83,14 @@ public class MapPanel extends JPanel {
 	}
 
 	private void drawTerr(Graphics2D g2d, Terrain t, int x, int y, int var, int tileSize) {
-		g2d.drawImage(map.getMod().getImage(t.getID()), x * tileSize, (y - 1) * tileSize, (x + 1) * tileSize, (y + 1) * tileSize, var * tileSize, 0, (var + 1) * tileSize, tileSize * 2, this);
+		g2d.drawImage(map.getMod().getImage(t.getID(), map.getTileset()), x * tileSize, (y - 1) * tileSize, (x + 1) * tileSize, (y + 1) * tileSize, var * tileSize, 0, (var + 1) * tileSize, tileSize * 2, this);
 	}
 
 	private void drawTerr(Graphics2D g2d, Terrain t, int x, int y, int tileSize) {
-		g2d.drawImage(map.getMod().getImage(t.getID()), x * tileSize, (y - 1) * tileSize, (x + 1) * tileSize, (y + 1) * tileSize, 0, 0, tileSize, tileSize * 2, this);
+		g2d.drawImage(map.getMod().getImage(t.getID(), map.getTileset()), x * tileSize, (y - 1) * tileSize, (x + 1) * tileSize, (y + 1) * tileSize, 0, 0, tileSize, tileSize * 2, this);
 	}
 
 	public Dimension getPreferredSize() {
-		return new Dimension(map.getWidth() * map.getMod().getTileSize(), map.getHeight() * map.getMod().getTileSize());
+		return new Dimension(map.getWidth() * map.getMod().getTilesize(), map.getHeight() * map.getMod().getTilesize());
 	}
 }

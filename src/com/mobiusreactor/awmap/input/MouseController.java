@@ -4,7 +4,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.SwingUtilities;
 import javax.swing.event.MouseInputListener;
 import com.mobiusreactor.awmap.map.Location;
-import com.mobiusreactor.awmap.map.Mod;
+import com.mobiusreactor.awmap.mod.Mod;
 import com.mobiusreactor.awmap.ui.Editor;
 
 public class MouseController extends MapController implements MouseInputListener {
@@ -51,7 +51,7 @@ public class MouseController extends MapController implements MouseInputListener
 
 	private void doMoveCursor(MouseEvent e) {
 		Location old = c.clone();
-		c.setLocation(e.getX() / Editor.getMap().getMod().getTileSize(), e.getY() / Editor.getMap().getMod().getTileSize());
+		c.setLocation(e.getX() / Editor.getMap().getMod().getTilesize(), e.getY() / Editor.getMap().getMod().getTilesize());
 
 		if (!c.equals(old)) {
 			moveCursor(SwingUtilities.isLeftMouseButton(e));

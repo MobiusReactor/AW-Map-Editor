@@ -3,6 +3,8 @@ package com.mobiusreactor.awmap.map;
 import javax.swing.JOptionPane;
 import javax.swing.undo.AbstractUndoableEdit;
 import javax.swing.undo.UndoManager;
+import com.mobiusreactor.awmap.mod.Mod;
+import com.mobiusreactor.awmap.mod.ModHandler;
 import com.mobiusreactor.awmap.ui.Editor;
 import com.mobiusreactor.awmap.undo.ResizeEdit;
 
@@ -16,6 +18,8 @@ public class Map {
 
 	private String name;
 	private String author;
+
+	private int tileset = 0;
 
 	private UndoManager undoHandler = new UndoManager();
 
@@ -76,7 +80,7 @@ public class Map {
 		return height;
 	}
 
-	public Mod getMod(){
+	public Mod getMod() {
 		return mod;
 	}
 
@@ -91,6 +95,10 @@ public class Map {
 	 */
 	public Tile getTile(int x, int y) {
 		return tile[x][y];
+	}
+
+	public int getTileset() {
+		return tileset;
 	}
 
 	public void setTile(int x, int y, Tile t) {

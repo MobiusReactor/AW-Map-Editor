@@ -7,6 +7,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 import com.mobiusreactor.awmap.input.MapController;
+import com.mobiusreactor.awmap.mod.TerrainModInfo;
 
 public class ChoicePanel extends JPanel implements MouseListener {
 	public ChoicePanel() {
@@ -22,12 +23,12 @@ public class ChoicePanel extends JPanel implements MouseListener {
 		super.paintComponent(g);
 		g.setColor(Color.RED);
 
-		int ts = Editor.getMap().getMod().getTileSize();
+		int ts = Editor.getMap().getMod().getTilesize();
 
 		int col = 0;
 		int row = 0;
 
-		for (Image i : Editor.getMap().getMod().getTerrImageArray()) {
+		for (TerrainModInfo td : Editor.getMap().getMod().getTerrainData()) {
 			int j = col * (ts + 12) + 12;
 
 			if (col == 6) {
@@ -39,14 +40,14 @@ public class ChoicePanel extends JPanel implements MouseListener {
 			// int k = ((3 * y * ts) + ts) / 2;
 			int k = row * (ts + 12) + 12;
 
-			g.drawImage(i, j, k - ts, j + ts, k + ts, 0, 0, ts, (2 * ts), this);
+			g.drawImage(td.getGfx(Editor.getMap().getTileset()), j, k - ts, j + ts, k + ts, 0, 0, ts, (2 * ts), this);
 			col++;
 		}
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		int ts = Editor.getMap().getMod().getTileSize();
+		int ts = Editor.getMap().getMod().getTilesize();
 
 		int col = -1;
 		int row = -1;
